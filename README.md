@@ -79,8 +79,8 @@ jobs:
 
     - name: Cryptographic Commit & Push
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action Bot"
+        git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+        git config --local user.name "${{ github.actor }}"
         git add pulse.log
         git commit -m "chore: automated contribution heartbeat [skip ci]"
         git push
@@ -211,8 +211,8 @@ on:
 | Enterprise | 50,000 minutes | 50 GB |
 
 **StreakMaintainer Usage:**
-- Execution time: ~10-15 seconds per run
-- Monthly consumption: ~5-10 minutes (assuming daily runs)
+- Execution time: ~5 seconds per run
+- Monthly consumption: ~2.5 minutes (assuming daily runs)
 - Storage per commit: <1 KB
 - Total monthly storage: ~30 KB
 
